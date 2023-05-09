@@ -10,10 +10,10 @@ class Conexion{
     public function __construct()
     {
         try {
-            $this->con = new PDO("myql:dbname=$this->database; host=$this->host", $this->user, $this->pass);
+            $this->con = new PDO("mysql:dbname=$this->database;host=$this->host", $this->user, $this->pass);
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
-            echo "Error: ".$e->getMessage();
+            echo "Error Conexion: ".$e->getMessage();
     }
 }
 
