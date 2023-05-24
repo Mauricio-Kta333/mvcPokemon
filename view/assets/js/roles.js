@@ -31,7 +31,7 @@ function read(){
         <input onclick="estadoRol('${element.estado}','${element.id}')" class="form-check-input" type="checkbox" id="switch${element.nombreRol}">
         <label class="form-check-label" for="flexSwitchCheckDefault">${element.estado=='A'?'Activo':'Inactivo'}</label>
       </div></td>`;
-        tabla +=`<td><a href="#" class="btn btn-outline-warning">Modificar</a> <a href="#" class="btn btn-outline-danger">Eliminar</a></td>`;
+        tabla +=`<td><a onclick="estadoUpdate(${element.id})" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#updateModal">Modificar</a> <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Eliminar</a></td>`;
         tabla +=`<tr>`;
     });
     document.getElementById("tableRol").innerHTML = tabla;
@@ -39,7 +39,22 @@ function read(){
 });
 }
 function update(){
-
+    let id = localStorage.id;
+    let nombreRol = document.getElementById("txtRolUpdate").value;
+    let url = "../controlador/roles.update.php";
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `txtRol=${nombreRol}&id=${id}`,
+    }
+    fetch(url, options)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            read()
+        })
 }
 function deletes(){
 
@@ -61,12 +76,12 @@ function estadoRol(estado,id)
     let url = "../controlador/roles.estado.php";
 
     fetch(url, option)
-    .then((response) => response.json())
-    .then((data) => {
-        read();
-        console.log(data);
+        .then((response) => response.json())
+        .then((data) => {
+            read();
+            console.log(data);
         
-    });
+        });
 }
 
 function actualizarEstado() {
@@ -80,4 +95,14 @@ function actualizarEstado() {
         }
         
     }
+}
+
+function estadoUpdate(id) {
+    let url = `../controlador/roles.readid.php?id=${id}`;
+    fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+            document.getElementById("txtRolUpdate").value = data[0].nombreRol;
+            localStorage.id = data[0].id;
+        })
 }

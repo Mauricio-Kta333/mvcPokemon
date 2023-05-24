@@ -40,6 +40,31 @@ class Rol{
         }
     }
 
+    function update() 
+    {
+        try {
+            $sql = $this->conexion->getCon()->prepare("UPDATE rol SET nombreRol=? WHERE id=?");
+            $sql->bindParam(1, $this->nombreRol);
+            $sql->bindParam(2, $this->id);
+            $sql->execute();
+            return "Rol modificado";
+        } catch (PDOException $e) {
+            return "Error: ".$e->getMessage();
+        }
+       
+    }
+    function readId()
+    {
+        try {
+            $sql = $this->conexion->getCon()->prepare("SELECT * FROM rol WHERE id=?");
+            $sql->bindParam(1, $this->id);
+            $sql->execute();
+            $response = $sql->fetchAll(\PDO::FETCH_ASSOC);
+            return $response;
+        } catch (PDOException $e) {
+            return "Error: ".$e->getMessage();
+        }
+    }
     function estado()
     {
         try {
