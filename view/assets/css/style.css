@@ -1,0 +1,15 @@
+.excelDataTable{
+    background-color: green !important;
+}
+.pdfDataTable{
+    background-color: red !important;
+}
+.printDataTable{
+    background-color: grey !important;
+}
+.verDataTable{
+    background-color: mediumspringgreen !important;
+}
+.copyDataTable{
+    background-color: chocolate !important;
+}

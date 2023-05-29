@@ -7,7 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Pokemon</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/alertify.min.css">
+    <link rel="stylesheet" href="./assets/css/datatables.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
     <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/all.min.js"></script>
+    <script src="./assets/js/alertify.min.js"></script>
+    <script src="./assets/js/datatables.min.js"></script>
 </head>
 
 <body>

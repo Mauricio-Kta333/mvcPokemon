@@ -14,13 +14,13 @@
             <input class="form-control" type="text" name="txtRol" id="txtRol">
         </div>
         <div class="col-3 align-self-end">
-            <input onclick="create()" class="btn btn-outline-primary" type="button" value="Registrar">
+            <a onclick="create()" class="btn btn-outline-primary" type="button" ><i class="fa-solid fa-circle-plus fa-bounce"></i> Registrar</a>
         </div>
     </div>
     <div class="row d-flex justify-content-center">
         <h1 class="mt-5 mb-3 text-center bg-dark text-white">Roles</h1>
         <div class="col-8">
-            <table class="table table-hover bg-light">
+            <table class="table table-hover bg-light" id="tabla">
                 <thead>
                     <tr>
                         <th scope="col" width="20%">#</th>
@@ -70,15 +70,15 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header bg-gradient bg-danger">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal Eliminar</h5>
+                        <h5 class="modal-title col-11 text-center ms-4" id="exampleModalLabel">Modal Eliminar</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <p class="text-center fw-bold" id="idEliminar"></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                        <button onclick="deletes()" type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Eliminar</button>
                     </div>
                 </div>
             </div>

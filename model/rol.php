@@ -53,6 +53,18 @@ class Rol{
         }
        
     }
+
+    function delete()
+    {
+        try {
+            $sql = $this->conexion->getCon()->prepare("DELETE FROM rol WHERE id=?");
+            $sql->bindParam(1, $this->id);
+            $sql->execute();
+            return "Rol eliminado";
+        } catch (PDOException $e) {
+            return "Error: ".$e->getMessage();
+        }
+    }
     function readId()
     {
         try {
