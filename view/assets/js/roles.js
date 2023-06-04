@@ -1,6 +1,13 @@
 var id;
 
 function create() {
+    let nombreRol = document.getElementById('txtRol').value;
+
+    if (nombreRol === ''){
+        alertify.error("Por favor, completa el campo");
+        return;
+    }
+
     let data = `txtRol=${document.getElementById("txtRol").value}`;
     let option = {
         method: "POST",
@@ -15,7 +22,8 @@ function create() {
     fetch(url, option)
         .then((response) => response.json())
         .then((data) => {
-            validacion(data)
+            console.log(data);
+            document.getElementById("txtRol").value = "";
             read();
         })
         .catch((error) => {
@@ -186,14 +194,4 @@ function estadoUpdate(id) {
 function estadoDelete(id, nombreRol) {
     this.id = id;
     document.getElementById("idEliminar").innerHTML = `¿Esta seguro de eliminar el rol: ${nombreRol}?`
-}
-
-function validacion() {
-    if (document.getElementById("txtRol").value == "") {
-        alertify.error("Debe ingresar un rol");
-        return false;
-    } else {
-        alertify.success("Rol creado");
-    }
-    return true;
 }

@@ -5,11 +5,11 @@
     background-color: red !important;
 }
 .printDataTable{
-    background-color: grey !important;
+    background-color: rgb(255, 255, 255) !important;
 }
 .verDataTable{
-    background-color: mediumspringgreen !important;
+    background-color: rgb(44, 58, 255) !important;
 }
 .copyDataTable{
-    background-color: chocolate !important;
+    background-color: rgb(255, 187, 0) !important;
 }
