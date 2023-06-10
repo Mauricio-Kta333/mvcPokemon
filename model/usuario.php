@@ -48,13 +48,74 @@ class Usuario{
         }
     }
 
+    function updateUsuario() 
+    {
+        try {
+            $sql = $this->conexion->getCon()->prepare("UPDATE usuariorol SET tipoDoc=?, identificacion=?, nombre=?, apellido=?, correo=?, 
+            direccion=?, telefono=?, genero=? WHERE id=?");
+            $sql->bindParam(1, $this->tipoDoc);
+            $sql->bindParam(2, $this->identificacion);
+            $sql->bindParam(3, $this->nombre);
+            $sql->bindParam(4, $this->apellido);
+            $sql->bindParam(5, $this->correo);
+            $sql->bindParam(6, $this->direccion);
+            $sql->bindParam(7, $this->telefono);
+            $sql->bindParam(8, $this->genero);
+            $sql->bindParam(9, $this->id);
+            $sql->execute();
+            return "Usuario modificado";
+        } catch (PDOException $e) {
+            return "Error: ".$e->getMessage();
+        }
+       
+    }
+
+    function deleteUsuario()
+    {
+        try {
+            $sql = $this->conexion->getCon()->prepare("DELETE  FROM usuario WHERE id = ?");
+            $sql->bindParam(1, $this->id);
+            $sql->execute();
+            return "Usuario Eliminado Correctamente";
+        } catch (PDOException $e) {
+            return "Error: ".$e->getMessage();
+        }
+    }
+
     function readUsuario()
     {
         try {
-            $sql = $this->conexion->getCon()->prepare("SELECT * FROM usuario");
+            $sql = $this->conexion->getCon()->prepare("SELECT * FROM usuariorol");
             $sql->execute();
             $response = $sql->fetchAll(\PDO::FETCH_ASSOC);
             return $response;
+        } catch (PDOException $e) {
+            return "Error: ".$e->getMessage();
+        }
+    }
+
+    
+
+    function readIdUsuario()
+    {
+        try {
+            $sql = $this->conexion->getCon()->prepare("SELECT * FROM usuariorol WHERE id=?");
+            $sql->bindParam(1, $this->id);
+            $sql->execute();
+            $response = $sql->fetchAll(\PDO::FETCH_ASSOC);
+            return $response;
+        } catch (PDOException $e) {
+            return "Error: ".$e->getMessage();
+        }
+    }
+    function estadoUsuario()
+    {
+        try {
+            $sql = $this->conexion->getCon()->prepare("UPDATE usuariorol SET estado = ? WHERE id = ?");
+            $sql->bindParam(1, $this->estado);
+            $sql->bindParam(2, $this->id);
+            $sql->execute();
+            return "Estado modificado";
         } catch (PDOException $e) {
             return "Error: ".$e->getMessage();
         }

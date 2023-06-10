@@ -30,10 +30,10 @@ function createProducto(){
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
-            document.getElementById("txtProducto").value = "";
-            document.getElementById("numProducto").value = "";
-            document.getElementById("numProCantidad").value = "";
-            document.getElementById("txtDescripcion").value = "";
+            txtProducto.value = "";
+            numProducto.value = "";
+            numProCantidad.value = "";
+            txtDescripcion.value = "";
             readProducto()
         })
 }
