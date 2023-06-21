@@ -67,6 +67,7 @@ function readProducto() {
             actualizarEstadoPro()
             alertify.warning("Productos cargados")
             let table = new DataTable("#tablaPro", {
+                retrieve: true,
                 language: {
                     url: "./assets/es-ES.json",
                 },

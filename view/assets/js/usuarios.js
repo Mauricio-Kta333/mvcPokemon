@@ -24,6 +24,7 @@ function createUsuario() {
     let telefono = txtTelefono.value;
     let genero = selGenero.value;
     let rol = selRol.value;
+    
 
     if (tipo === '' || identificacion === '' || nombre === '' || apellido === '' || correo === '' || contra === '' || direccion === '' || telefono === ''
         || genero === '' || rol === '') {
@@ -92,6 +93,7 @@ function readUsuario() {
             actualizarEstadoUsuario()
             alertify.warning("Usuarios cargados")
             let table = new DataTable("#tablaUser", {
+                retrieve: true,
                 language: {
                     url: "./assets/es-ES.json",
                 },

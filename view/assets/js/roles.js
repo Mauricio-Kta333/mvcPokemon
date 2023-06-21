@@ -57,6 +57,7 @@ function read() {
             actualizarEstado()
             alertify.warning("Roles cargados")
             let table = new DataTable("#tabla", {
+                retrieve: true,
                 language: {
                     url: "./assets/es-ES.json",
                 },
