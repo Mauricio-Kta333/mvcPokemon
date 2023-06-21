@@ -120,6 +120,27 @@ class Usuario{
             return "Error: ".$e->getMessage();
         }
     }
+<<<<<<< Updated upstream
+=======
+    public function login()
+    {
+        try{
+            $sql = $this->conexion->getCon()->prepare("SELECT * FROM usuario WHERE correo=? AND password=?");
+            $sql->bindParam(1, $this->correo);
+            $sql->bindParam(2, $this->password);
+            $sql->execute();
+            $result = $sql->fetchAll(\PDO::FETCH_ASSOC);
+            if(isset($result) and !empty($result)){
+                session_start();
+                $_SESSION["nombre"]=$result[0]["nombre"];
+                $_SESSION["rol"]=$result[0]["idRol"];
+            }
+            return $result;
+        } catch (PDOException $e) {
+            return "Error: ".$e->getMessage();
+        }
+    }
+>>>>>>> Stashed changes
 
     /**
      * Get the value of i

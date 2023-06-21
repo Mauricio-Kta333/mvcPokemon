@@ -24,7 +24,10 @@ function createUsuario() {
     let telefono = txtTelefono.value;
     let genero = selGenero.value;
     let rol = selRol.value;
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
 
     if (tipo === '' || identificacion === '' || nombre === '' || apellido === '' || correo === '' || contra === '' || direccion === '' || telefono === ''
         || genero === '' || rol === '') {

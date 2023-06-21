@@ -17,6 +17,8 @@
     <script src="./assets/js/all.min.js"></script>
     <script src="./assets/js/alertify.min.js"></script>
     <script src="./assets/js/datatables.min.js"></script>
+    <script src="./assets/js/loginValidate.js"></script>
+    <script src="./assets/js/loginValidate.js"></script>
 </head>
 
 <body>
@@ -41,6 +43,10 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link disabled">Disabled</a>
+                            </li>
+                            <li class="nav-item justify-content-end">
+                                <a class="nav-link disabled">Disabled</a>
+                                <i class="fa-duotone fa-power-off"></i>
                             </li>
                         </ul>
                     </div>
