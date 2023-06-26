@@ -1,7 +1,7 @@
-<?php 
-
+<?php
 session_start();
-if (isset($_SESSION) and !empty($_SESSION)){
+
+if ( isset($_SESSION) and !empty($_SESSION)){
     $response = true;
 } else {
     $response = false;

@@ -1,17 +1,21 @@
 <?php include_once "header.php"; ?>
-
-<div class="row">
-    <div class="col-12">
-        <label class="form-label">Correo</label>
-        <input type="text" name="txtCorreo" id="txtCorreo">
+<form action="">
+    <div class="row d-flex justify-content-center mt-3">
+            <div class="col-3">
+                <label class="form-label">Correo: </label>
+                <input class="form-control" type="email" name="txtCorreo" id="txtCorreo">
+            </div>
+            <div class="col-3">
+                <label class="form-label">Password: </label>
+                <input class="form-control" type="password" name="txtPassword" id="txtPassword">
+            </div>
     </div>
-    <div class="col-12">
-        <label class="form-label">Password</label>
-        <input type="text" name="txtPassword" id="txtPassword">
+    <div class="d-flex justify-content-center mt-3">
+            <div class="">
+                    <a onclick="login()" class="btn btn-primary" type="submit">Iniciar</a>
+            </div>
     </div>
-    <div class="col-12">
-        <a onclick="login()" type="button" class="btn btn.primary" value="registrar">Iniciar</a>
-    </div>
-</div>
+</form>
+    
 <?php include_once "footer.php"; ?>
 <script src="./assets/js/login.js"></script>

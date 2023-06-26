@@ -18,11 +18,12 @@
                 <option value="CC">CC</option>
                 <option value="NUIP">NUIP</option>
                 <option value="DNI">DNI</option>
+                <option value="CURP">CURP</option>
             </select>
         </div>
         <div class="col-4">
             <label class="form-label">Numero Documento:</label>
-            <input type="number" class="form-control" name="numIdentificacion" id="numIdentificacion">
+            <input type="text" class="form-control" name="numIdentificacion" id="numIdentificacion">
         </div>
     </div>
     <br>

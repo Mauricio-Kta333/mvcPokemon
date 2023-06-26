@@ -2,11 +2,11 @@
 
 include_once "../model/usuario.php";
 
-$correo = $_GET["correo"];
-$password = $_GET["password"];
+$correo = $_POST["txtCorreo"];
+$password = $_POST["txtPassword"];
 
-$longinM = new \modelo\Usuario;
-$longinM->setCorreo($correo);
+$loginM = new \modelo\Usuario;
+$loginM->setCorreo($correo);
 $loginM->setPassword($password);
 $response = $loginM->login();
 

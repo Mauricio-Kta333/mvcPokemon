@@ -1,15 +1,23 @@
 function login() {
-    let data = `correo=${txtCorreo.value}&password=${txtPassword.value}`;
-    let url = "../controlador/login.php?" + data;
-    fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-            try {
-                if ((data[0].correo = txtCorreo.value)) {
-                    window.location.href = "roles.frm.php";
-                }
-            } catch (error) {
-                alert("Usuario o Password incorrectos");
+    let data = new FormData();
+    data.append('txtCorreo', txtCorreo.value);
+    data.append('txtPassword', txtPassword.value);
+
+    let url = "../controlador/login.php";
+    fetch(url, {
+        method: 'POST',
+        body: data
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+        try {
+            if (data[0].correo === txtCorreo.value) {
+                window.location.href = "roles.frm.php";
+                console.log("Datos enviados correctamente al controlador");
             }
-        });
+        } catch (error) {
+            alert("Usuario o Password incorrectos");
+        }
+    });
 }

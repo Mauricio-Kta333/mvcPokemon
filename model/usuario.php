@@ -120,12 +120,11 @@ class Usuario{
             return "Error: ".$e->getMessage();
         }
     }
-<<<<<<< Updated upstream
-=======
+    
     public function login()
     {
         try{
-            $sql = $this->conexion->getCon()->prepare("SELECT * FROM usuario WHERE correo=? AND password=?");
+            $sql = $this->conexion->getCon()->prepare("SELECT * FROM usuariorol WHERE correo=? AND password=?");
             $sql->bindParam(1, $this->correo);
             $sql->bindParam(2, $this->password);
             $sql->execute();
@@ -140,7 +139,6 @@ class Usuario{
             return "Error: ".$e->getMessage();
         }
     }
->>>>>>> Stashed changes
 
     /**
      * Get the value of i

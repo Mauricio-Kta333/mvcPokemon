@@ -45,8 +45,7 @@
                                 <a class="nav-link disabled">Disabled</a>
                             </li>
                             <li class="nav-item justify-content-end">
-                                <a class="nav-link disabled">Disabled</a>
-                                <i class="fa-duotone fa-power-off"></i>
+                                <button type="button" onclick="deleteLogin()">Cerrar Sesión</button>
                             </li>
                         </ul>
                     </div>
